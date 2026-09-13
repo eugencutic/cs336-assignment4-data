@@ -2,15 +2,17 @@ from __future__ import annotations
 
 import os
 from typing import Any
-
+from cs336_data.raw_data_converter import RawDataConverter
+from cs336_data.lang_id.language_identifier import LanguageIdentifier 
 
 
 def run_extract_text_from_html_bytes(html_bytes: bytes) -> str | None:
-    raise NotImplementedError
+    return RawDataConverter.extract_text(html_bytes)
 
 
 def run_identify_language(text: str) -> tuple[Any, float]:
-    raise NotImplementedError
+    language_identifier = LanguageIdentifier()
+    return language_identifier.identify_language(text)
 
 
 def run_mask_emails(text: str) -> tuple[str, int]:
