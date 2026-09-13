@@ -3,7 +3,7 @@ from pathlib import Path
 from typing import Tuple
 import fasttext
 
-LANG_ID_MODEL_PATH = './cs336_data/lang_id/lid.176.bin'
+LANG_ID_MODEL_PATH = Path(Path(__file__).parent, 'lid.176.bin')
 
 class LanguageIdentifier:
     def __init__(self):
