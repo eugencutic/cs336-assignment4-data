@@ -11,7 +11,7 @@ class LanguageIdentifier:
         self.logger = logging.getLogger(__name__)
 
         if not self.model_path.exists():
-            raise FileNotFoundError(f"Model not at {self.model_path.resolve()}")
+            raise FileNotFoundError(f"Model not at {self.model_path.resolve()}. Download from https://fasttext.cc/docs/en/language-identification.html")
 
         self.model = fasttext.load_model(self.model_path.resolve()._str)
 
