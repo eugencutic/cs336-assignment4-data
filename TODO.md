@@ -1,0 +1,3 @@
+- [ ] Implement all test adapters
+- [ ] Select threshold for `en` language confidence filter
+- [ ] Set up training environment

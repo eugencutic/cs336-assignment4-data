@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import os
 from typing import Any
+from cs336_data.pii_masker import PIIMasker
 from cs336_data.raw_data_converter import RawDataConverter
 from cs336_data.lang_id.language_identifier import LanguageIdentifier 
 
@@ -16,15 +17,15 @@ def run_identify_language(text: str) -> tuple[Any, float]:
 
 
 def run_mask_emails(text: str) -> tuple[str, int]:
-    raise NotImplementedError
+    return PIIMasker.mask_emails(text)
 
 
 def run_mask_phone_numbers(text: str) -> tuple[str, int]:
-    raise NotImplementedError
+    return PIIMasker.mask_phone_numbers(text)
 
 
 def run_mask_ips(text: str) -> tuple[str, int]:
-    raise NotImplementedError
+    return PIIMasker.mask_ips(text)
 
 
 def run_classify_nsfw(text: str) -> tuple[Any, float]:
