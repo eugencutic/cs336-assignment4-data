@@ -16,7 +16,7 @@ class LanguageIdentifier:
         self.model = fasttext.load_model(self.model_path.resolve()._str)
 
     def identify_language(self, input_str: str) -> Tuple[str, float]:
-        self.logger.info(f'Identifying language. Doc preview: {input_str[:30]}')
+        self.logger.info(f'Identifying language.')
 
         labels, confidence_arr = self.model.predict(input_str.replace('\n', ' '))
 

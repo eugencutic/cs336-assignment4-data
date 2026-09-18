@@ -1,3 +1,4 @@
-- [ ] Implement all test adapters
-- [ ] Select threshold for `en` language confidence filter
-- [ ] Set up training environment
+- [] Implement all test adapters
+- [] Select threshold for `en` language confidence filter
+- [] Set up training environment
+- [] Evaluate nsfw and toxic classifiers

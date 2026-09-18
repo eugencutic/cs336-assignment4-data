@@ -23,3 +23,10 @@ class PIIMasker:
     def mask_phone_numbers(text):
         masked, count = re.subn(PIIMasker.PHONE_REGEX, '|||PHONE_NUMBER|||', text)
         return masked, count
+
+    @staticmethod
+    def mask_all(text):
+        text, email_count = PIIMasker.mask_emails(text)
+        text, phone_count = PIIMasker.mask_phone_numbers(text)
+        text, ip_count = PIIMasker.mask_ips(text)
+        return text, email_count + phone_count + ip_count
