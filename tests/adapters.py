@@ -5,7 +5,8 @@ from typing import Any
 from cs336_data.pii_masker import PIIMasker
 from cs336_data.raw_data_converter import RawDataConverter
 from cs336_data.lang_id.language_identifier import LanguageIdentifier 
-from cs336_data.harmul_content_filtering.harmul_content_classifier import HarmfulContentClassifier
+from cs336_data.harmful_content_filtering.harmful_content_classifier import HarmfulContentClassifier
+from cs336_data.quality_filters import QualityFilters
 
 
 def run_extract_text_from_html_bytes(html_bytes: bytes) -> str | None:
@@ -44,7 +45,7 @@ def run_classify_quality(text: str) -> tuple[Any, float]:
 
 
 def run_gopher_quality_filter(text: str) -> bool:
-    raise NotImplementedError
+    return QualityFilters.gopher_filter(text)
 
 
 def run_exact_line_deduplication(
